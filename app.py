@@ -24,7 +24,7 @@ def hello():
     data = cursor.fetchall()
     str = data[0]
     cursor.close()
-    return str
+    return 😂
 
 
 if __name__ == '__main__':
