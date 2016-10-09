@@ -1,4 +1,2 @@
 Flask
-werkzeug.generate_password_hash
-werkzeug.check_password_hash
 os
