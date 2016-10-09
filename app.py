@@ -1,13 +1,19 @@
 from flask import Flask, render_template, json, request
 from flask_mysqldb import MySQL
-from werkzeug import generate_password_hash, check_password_hash
 import os
 
 app = Flask(__name__)
 
 
 # Configure the MySQL Server
+# Configure the MySQL Server
 app.mysql = MySQL()
+app.config['MYSQL_USER'] = 'b496bd057a62f4'
+app.config['MYSQL_DATABASE_PASSWORD'] = '283921dc'
+app.config['MYSQL_DB'] = 'heroku_743551ffa3cefc4'
+app.config['MYSQL_HOST'] = 'us-cdbr-iron-east-04.cleardb.net'
+
+app.mysql.init_app(app)
 
 
 @app.route('/hello', methods=['POST'])
