@@ -1,5 +1,5 @@
 Flask
-flask_mysqldb:MySQL
+flask_mysqldb.MySQL
 werkzeug.generate_password_hash
 werkzeug.check_password_hash
 os
