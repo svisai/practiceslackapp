@@ -10,9 +10,15 @@ app = Flask(__name__)
 app.mysql = MySQL()
 
 
-@app.route('/hello', methods=['POST', 'GET'])
+@app.route('/hello', methods=['POST'])
 def hello():
-    return "hi";
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM HEY")
+
+    data = cursor.fetchall()
+    str = data[0]
+    cursor.close()
+    return str
 
 
 if __name__ == '__main__':
