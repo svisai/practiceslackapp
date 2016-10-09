@@ -18,7 +18,7 @@ app.mysql.init_app(app)
 
 @app.route('/hello', methods=['POST'])
 def hello():
-    cursor = mysql.connection.cursor()
+    cursor = app.mysql.connection.cursor()
     cursor.execute("SELECT * FROM hey")
 
     data = cursor.fetchall()
