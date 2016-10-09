@@ -1,9 +1,26 @@
-#!/usr/bin/env python
-# encoding: utf-8
-from bottle import run, post, get, os
-@post('/hello')
+from flask import Flask, render_template, json, request
+from flask_mysqldb import MySQL
+from werkzeug import generate_password_hash, check_password_hash
+import os
+
+app = Flask(__name__)
+
+
+# Configure the MySQL Server
+app.mysql = MySQL()
+
+
+@app.route('/hello', methods=['POST'])
 def hello():
-    return 'Hi World!'
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM HEY")
+
+    data = cursor.fetchall()
+    str = data[0]
+    cursor.close()
+    return str
+
+
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
-    run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port)
