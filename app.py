@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Configure the MySQL Server
 app.mysql = MySQL()
 app.config['MYSQL_USER'] = 'b496bd057a62f4'
-app.config['MYSQL_DATABASE_PASSWORD'] = '283921dc'
+app.config['MYSQL_PASSWORD'] = '283921dc'
 app.config['MYSQL_DB'] = 'heroku_743551ffa3cefc4'
 app.config['MYSQL_HOST'] = 'us-cdbr-iron-east-04.cleardb.net'
 
