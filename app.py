@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # encoding: utf-8
-from bottle import run, post
+from bottle import run, post, get
 @post('/hello')
+def hello():
+    return 'Hi World!'
+@get('/hello')
 def hello():
     return 'Hi World!'
 if __name__ == '__main__':
