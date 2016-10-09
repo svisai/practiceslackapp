@@ -1,7 +1,6 @@
 from flask import Flask, render_template, json, request
 from flask_mysqldb import MySQL
 import os
-import emoji
 
 app = Flask(__name__)
 
@@ -25,7 +24,7 @@ def hello():
     data = cursor.fetchall()
     str = data[0]
     cursor.close()
-    return emoji.emojize(':thumbs_up_sign:')
+    return str
 
 
 if __name__ == '__main__':
